@@ -175,7 +175,7 @@ export const Hero = () => {
           </a>
         </div>
         <div className="md:col-start-5 md:col-span-6 text-left 2xl:col-start-6 2xl:col-span-5">
-          <div className="md:ml-12 relative top-4 md:top-6 lg:top-7">
+          <div className="md:ml-12 relative top-2 mt-2 md:mt-0 md:top-6 lg:top-7">
             {useCases.map((useCase, index) => {
               return (
                 <UseCaseButton
