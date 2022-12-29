@@ -140,7 +140,7 @@ export const Hero = () => {
         Fast, collaborative, & customizable transaction monitoring
       </h2>
       <div className="block md:grid md:grid-cols-10 px-4 md:px-0">
-        <div className="md:col-start-1 md:col-span-4 sm:p-10 md:p-8 lg:p-14 text-center">
+        <div className="md:col-start-1 md:col-span-4 sm:p-10 md:p-8 lg:p-14 text-center 2xl:col-span-5">
           <Feature
             header="Efficient, intuitive, no-code"
             text="Console empowers operational teams to work and collaborate more effectively and faster"
@@ -174,7 +174,7 @@ export const Hero = () => {
             </svg>
           </a>
         </div>
-        <div className="md:col-start-5 md:col-span-6 text-left">
+        <div className="md:col-start-5 md:col-span-6 text-left 2xl:col-start-6 2xl:col-span-5">
           <div className="md:ml-12 relative top-4 md:top-6 lg:top-7">
             {useCases.map((useCase, index) => {
               return (
