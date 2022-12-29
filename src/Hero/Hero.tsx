@@ -120,23 +120,23 @@ export const Hero = () => {
   const UseCaseButton = (props: { useCase: UseCase; index: number }) => {
     return (
       <div
-        className={`inline-flex justify-center align-middle rounded-full px-3 py-1 mr-2 cursor-pointer my-1 md:my-0 ${
-          currentUseCase === props.index ? "bg-black text-white" : ""
+        className={`inline-flex justify-center items-center rounded-full px-3 py-2 mr-2 cursor-pointer my-1 md:my-0 ${
+          currentUseCase === props.index ? "bg-darkblue text-white" : ""
         }`}
         onClick={() => setCurrentUseCase(props.index)}
       >
         {props.useCase.icon}
-        {props.useCase.name}
+        <span className="text-sm">{props.useCase.name}</span>
       </div>
     );
   };
 
   return (
-    <div className="bg-blue-200">
-      <h1 className="text-2xl lg:text-3xl text-center font-bold pt-10 pb-3 px-2 md:px-0">
+    <div className="bg-grey-200">
+      <h1 className="text-2xl lg:text-3xl text-center font-bold pt-10 pb-3 px-4 md:px-0">
         Made for compliance and fraud teams
       </h1>
-      <h2 className="text-base lg:text-xl  mx-auto text-center pb-6 md:pb-4 px-2">
+      <h2 className="text-base lg:text-xl  mx-auto text-center pb-6 md:pb-4 px-4">
         Fast, collaborative, & customizable transaction monitoring
       </h2>
       <div className="block md:grid md:grid-cols-10 px-4 md:px-0">
@@ -155,7 +155,7 @@ export const Hero = () => {
           ></Feature>
           <a
             href="https://google.com"
-            className="ml-8 text-left block text-blue-600"
+            className="ml-8 text-left block text-blue"
           >
             Learn More
             <svg
