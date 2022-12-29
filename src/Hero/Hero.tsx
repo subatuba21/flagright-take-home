@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 type UseCase = {
   name: string;
   icon: JSX.Element;
   pictureSrc: string;
+  picture: HTMLImageElement | null;
 };
 const useCases: UseCase[] = [
   {
@@ -24,6 +25,7 @@ const useCases: UseCase[] = [
       </svg>
     ),
     pictureSrc: "/pic1.svg",
+    picture: null,
   },
   {
     name: "Rules",
@@ -44,6 +46,7 @@ const useCases: UseCase[] = [
       </svg>
     ),
     pictureSrc: "/pic3.svg",
+    picture: null,
   },
   {
     name: "Risk scoring",
@@ -64,6 +67,7 @@ const useCases: UseCase[] = [
       </svg>
     ),
     pictureSrc: "/pic2.svg",
+    picture: null,
   },
   {
     name: "Sanctions screening",
@@ -84,11 +88,20 @@ const useCases: UseCase[] = [
       </svg>
     ),
     pictureSrc: "/pic4.svg",
+    picture: null,
   },
 ];
 
 export const Hero = () => {
   const [currentUseCase, setCurrentUseCase] = useState(0);
+  useEffect(() => {
+    for (let i = 0; i < useCases.length; i++) {
+        const useCase = useCases[i];
+      const renderedImage = new Image();
+        renderedImage.src = useCase.pictureSrc;
+        useCases[i].picture = renderedImage;
+    }
+  });
 
   const Feature = (props: { header: string; text: string }) => {
     return (
@@ -186,7 +199,7 @@ export const Hero = () => {
               );
             })}
           </div>
-          <img src={useCases[currentUseCase].pictureSrc} alt="pic1"></img>
+          {useCases[currentUseCase].picture ? <img src={(useCases[currentUseCase].picture as any).src} alt={(useCases[currentUseCase].picture as any).alt}></img> : <img src={useCases[currentUseCase].pictureSrc} alt="img"></img>}
         </div>
       </div>
     </div>
