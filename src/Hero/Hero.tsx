@@ -199,7 +199,7 @@ export const Hero = () => {
               );
             })}
           </div>
-          {useCases[currentUseCase].picture ? <img src={(useCases[currentUseCase].picture as any).src} alt={(useCases[currentUseCase].picture as any).alt}></img> : <img src={useCases[currentUseCase].pictureSrc} alt="img"></img>}
+          {useCases[currentUseCase].picture ? <img src={(useCases[currentUseCase].picture as any).src} alt={(useCases[currentUseCase].picture as any).alt} className="md:pr-3"></img> : <img src={useCases[currentUseCase].pictureSrc} alt="img" className="md:pr-3"></img>}
         </div>
       </div>
     </div>
